@@ -1,8 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 
 module.exports = {
     mode: process.env.NODE_ENV,
+    // resolve: {fallback: {
+    //     "path": require.resolve("path-browserify")
+    // }},
     entry: {
         bundle: './src/index.js'
     },
@@ -41,12 +45,16 @@ module.exports = {
         open: true,
         hot: true,
         compress: true,
+        proxy:{
+            '/results': 'http://localhost:3000'
+        }
     },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Webpack Dev',
             filename: 'index.html',
             template: 'src/template.html'
-        })
+        }), 
+        // new NodePolyfillPlugin()
     ]
 }

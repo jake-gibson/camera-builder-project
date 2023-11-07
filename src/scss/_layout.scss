@@ -1,6 +1,7 @@
 * {
     margin: 1px;
     padding: 0;
+    box-sizing: content-box;
 }
 #main {
     // border: 1px solid $primary,
@@ -13,5 +14,30 @@
 
 #container {
     height: 75vh;
+    border: 1px solid $light,
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    overflow: scroll;
+}
+
+.result {
+    width: 1fr;
+    height: 1fr;
+    margin: 1vw;
+    padding: 5vw;
+    text-align: center;
+    border: 1px solid $light,
+}
+
+.equipment {
+    width: 1fr;
+    height: 2fr;
+    margin: 1vw;
+    padding: 10vw 5vw;
+    text-align: center;
     border: 1px solid $light,
 }
