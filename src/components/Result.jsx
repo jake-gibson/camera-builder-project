@@ -9,8 +9,8 @@ const Result = () => {
         console.log('clicked')
         fetch('/results/')
         .then(res => res.json())
-        .then(res => {
-            setData(res.name);
+        .then(res => { //an array of product objects
+            setData(res[0].title);
         })
         // setData('just kidding')
     }

@@ -15,6 +15,7 @@ module.exports = {
         path: path.resolve(__dirname, 'build'),
         clean: true,
     },
+    devtool: 'eval-source-map',
     module:{
         rules: [
             {
@@ -56,5 +57,8 @@ module.exports = {
             template: 'src/template.html'
         }), 
         // new NodePolyfillPlugin()
-    ]
+    ],
+    externals: {
+        puppeteer: "require('puppeteer')", // use additional double quotes here to define valid external
+    }
 }
