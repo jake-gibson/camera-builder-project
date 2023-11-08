@@ -1,5 +1,5 @@
 * {
-    margin: 1px;
+    // margin: 1px;
     padding: 0;
     box-sizing: content-box;
 }
@@ -21,7 +21,7 @@
 #grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
+    // gap: 1px;
     overflow: scroll;
 }
 
@@ -42,16 +42,39 @@
 #eq-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
+    grid-template-rows: repeat(3, 1fr);
     overflow: scroll;
+    transition: all 1s ease 0s;
 }
 
+.equipmentBtn {
+    text-align: center;
+    border: 1px solid $light,
+}
 
 .equipment {
-    width: 1fr;
-    height: 2fr;
-    margin: 1vw;
-    padding: 10vw 5vw;
+    width: 100%;
+    height: 160px;
+    text-align: center;
+    border: 1px solid $light,
+}
+
+#brand-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    overflow: scroll;
+    transition: all 1s ease 0s;
+}
+
+.brandBtn {
+    text-align: center;
+    border: 1px solid $light,
+}
+
+.brand {
+    width: 100%;
+    height: 100px;
     text-align: center;
     border: 1px solid $light,
 }

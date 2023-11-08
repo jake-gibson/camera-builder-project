@@ -7,7 +7,7 @@ const resultsController = {
     getResults: async (req, res, next) => {
         //test:
         
-        const url = 'https://www.bhphotovideo.com/c/search?q=cinema%20camera&filters=fct_brand_name%3Ablackmagic-design'
+        const url = req.params.url;
 
             const browser = await puppeteer.launch(); //{args: ['--proxy-server=${proxy}']}
             const page = await browser.newPage();

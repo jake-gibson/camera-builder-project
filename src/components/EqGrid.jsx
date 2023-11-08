@@ -1,19 +1,23 @@
 import React from "react";
-import Equipment from "./Equipment.jsx";
 import { useState } from "react";
+
+import Equipment from "./Equipment.jsx";
 
 
 const EqGrid = () => {
 
+    const [eq, setEq] = useState([
+        'Lens', 'Camera', 'Battery', 'Media', 'Grip', 'AKS'
+    ])
+
     const equip = [];
 
-    for(let i = 0; i < 8; i++){
-        equip.push(<Equipment />)
+    for(let i = 0; i < 6; i++){
+        equip.push(<Equipment name={eq[i]}/>)
     }
 
     return(
         <div id="eq-grid">
-            {/* {results} */}
             {equip}
         </div>
     );
