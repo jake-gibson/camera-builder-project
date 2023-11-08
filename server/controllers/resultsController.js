@@ -14,7 +14,7 @@ const resultsController = {
         const url = req.body.url;
 
             // await puppeteer.use(pluginStealth()) 
-            const browser = await puppeteer.launch( {headless: false , args: ['--disable-web-security', '--disable-features=IsolateOrigins', ' --disable-site-isolation-trials', `--incognito`]}); //{args: ['--proxy-server=${proxy}']} executablePath: executablePath(),
+            const browser = await puppeteer.launch( {headless: false , args: [ '--disable-web-security' ]}); //{args: ['--proxy-server=${proxy}']} executablePath: executablePath(),
             const page = await browser.newPage();
             await page.setExtraHTTPHeaders({ 
                 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 

@@ -34,7 +34,7 @@ module.exports = {
             },
             {
                 test: /\.(png|svg|jpe?g|gif)$/i,
-                type: 'asset',
+                type: 'asset/resource',
             }
         ]
     },
@@ -47,7 +47,8 @@ module.exports = {
         hot: true,
         compress: true,
         proxy:{
-            '/resultsLoad': 'http://localhost:3000'
+            '/resultsLoad': 'http://localhost:3000',
+            '/assets': 'http://localhost:3000'
         }
     },
     plugins: [

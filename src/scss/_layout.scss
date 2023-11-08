@@ -12,6 +12,22 @@
     border: 1px solid $light,
 }
 
+#build {
+    display: flex;
+    height: 100px;
+    border: 1px solid black;
+}
+
+.buildDiv {
+    border: 1px solid green;
+    width: 100%;
+
+    img {
+        width: 15vw;
+        height: auto;
+    }
+}
+
 #container {
     height: 75vh;
     border: 1px solid $light;
