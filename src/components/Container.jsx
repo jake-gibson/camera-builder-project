@@ -8,17 +8,17 @@ import { BrowserRouter as Router, Route, Routes, Link, Outlet } from "react-rout
 
 const Container = () => {
 
-    const url = useSelector((state) => { state.equip.url })
+    // const url = useSelector((state) => { state.equip.url })
 
     // const [url, setUrl] = useState('');
     //TODO: Will need to implement redux so that I can send current url across components
     // so that you can use it in the fetch request in Grid, and useEffect in grid to fetch?? so it goes immediately
-
+//url={url}
     return(
         <Router>
             <div id="container">
                 <Routes>
-                    <Route path='/results' url={url} element={<Grid />} />
+                    <Route exact path='/results' element={<Grid />} />
                     <Route exact path='/lens' element={<BrandGrid eqType={'Lens'}/>} />
                     <Route exact path='/camera' element={<BrandGrid eqType={'Camera'}/>} />
                     <Route exact path='/battery' element={<BrandGrid eqType={'Battery'}/>} />

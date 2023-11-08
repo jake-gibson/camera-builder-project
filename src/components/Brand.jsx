@@ -22,7 +22,7 @@ const Brand = ({ eqType, name }) => {
 
     return (
         <Link to={`/results`} className='brandBtn'>
-            <button onClick={() => dispatch(updateURL({url: newUrl})) }className='brand'>
+            <button onClick={() => dispatch(updateURL({url: newUrl, eq: eqType})) }className='brand'>
                 {name}
             </button>
         </Link>

@@ -10,7 +10,7 @@ app.use(express.json()); //body-parser
 app.use(express.urlencoded({ extended: true }));
 //cookie-parser?
 
-app.get('/results/:url', resultsController.getResults, (req, res) => {
+app.post('/resultsLoad', resultsController.getResults, (req, res) => {
     console.log('sending')
     const results = res.locals.scrapeData
     res.status(200).send(results);

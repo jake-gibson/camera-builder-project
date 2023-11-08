@@ -47,7 +47,7 @@ module.exports = {
         hot: true,
         compress: true,
         proxy:{
-            '/results': 'http://localhost:3000'
+            '/resultsLoad': 'http://localhost:3000'
         }
     },
     plugins: [
