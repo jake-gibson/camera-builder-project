@@ -18,17 +18,45 @@ const resultsController = {
                 'accept-encoding': 'gzip, deflate, br', 
                 'accept-language': 'en-US,en;q=0.9,en;q=0.8' 
             }); 
+            await page.setViewport({
+                width: 1200,
+                height: 800
+            });
+            // await page.setRequestInterception(true); 
+            // page.on('request', async (request) => { 
+            //     if (request.resourceType() == 'image') { 
+            //         await request.abort(); 
+            //     } else { 
+            //         await request.continue(); 
+            //     } 
+            // }); 
             await page.goto(url);
+
+            // await autoScroll(page);
+
+            await page.screenshot({
+                path: 'screenshot.png',
+                fullPage: true
+            });
             // await page.screenshot({path: path.resolve(__dirname, 'screenshot.png')})
-            const productList = await page.evaluate(() => {
-                console.log('we\'re here')
+            console.log('we\'re here')
+            const productList = await page.evaluate( () => {
+                
                 const products = document.querySelectorAll("[data-selenium='miniProductPageProduct']") // "[data-foo='1']"
             
                 return Array.from(products).slice(0, 20).map((product) => {
                     const title = product.querySelector('h3').innerText;
-                    return { title }
+                    const price = product.querySelector("[data-selenium='uppedDecimalPriceFirst']").innerText;
+                    const photoLink = product.querySelector("[data-selenium='miniProductPageProductImgLink']");
+                    const link = "https://www.bhphotovideo.com/" + photoLink.href;
+                    const imgURL = photoLink.firstChild.src;
+                    return { title, price, link, imgURL }
                 })
             })
+            await page.screenshot({
+                path: path.resolve(__dirname, `screenshot.png`),
+                fullPage: true
+            });
             console.log(productList)
             await browser.close();
             // console.log('request received')

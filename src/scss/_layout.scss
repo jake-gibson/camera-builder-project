@@ -14,7 +14,8 @@
 
 #container {
     height: 75vh;
-    border: 1px solid $light,
+    border: 1px solid $light;
+    display: relative;
 }
 
 #grid {
@@ -30,8 +31,21 @@
     margin: 1vw;
     padding: 5vw;
     text-align: center;
-    border: 1px solid $light,
+    // border: 1px solid $light,
+
+    img {
+        width: 15vw;
+        height: auto;
+    }
 }
+
+#eq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    overflow: scroll;
+}
+
 
 .equipment {
     width: 1fr;
