@@ -15,7 +15,7 @@ const BuildDiv = ({ type }) => {
     // const stateEqType = useSelector((state) => state.equip.currentEqType );
     // const type = objectType[stateEqType]
     const buildObj = useSelector((state) => state.equip[type] )
-    console.log(buildObj)
+    // console.log(buildObj)
     const {title, price, link, imgURL } = buildObj
 
     const convertStr = {
@@ -28,7 +28,7 @@ const BuildDiv = ({ type }) => {
     }
 
     const imgSrc = convertStr[imgURL]  ? convertStr[imgURL]  : imgURL
-    console.log(imgSrc)
+    // console.log(imgSrc)
 
     return(
         <div className='buildDiv'>

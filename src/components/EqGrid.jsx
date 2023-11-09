@@ -13,7 +13,7 @@ const EqGrid = () => {
     const equip = [];
 
     for(let i = 0; i < 6; i++){
-        equip.push(<Equipment name={eq[i]}/>)
+        equip.push(<Equipment key={`equip${i}`} name={eq[i]}/>)
     }
 
     return(

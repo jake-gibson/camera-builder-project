@@ -11,7 +11,7 @@ const Build = () => {
     const buildDivs = [];
 
     for(let i = 0; i < 6; i++){
-        buildDivs.push(<BuildDiv type={objectType[i]} />)
+        buildDivs.push(<BuildDiv key={`buildDiv${i}`} type={objectType[i]} />)
     }
 
     return(

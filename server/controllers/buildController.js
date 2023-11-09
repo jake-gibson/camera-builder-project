@@ -58,6 +58,28 @@ const buildController = {
         }
     },
 
+    deleteBuildDB: async (req, res, next) => {
+        //test:
+        console.log('deleting build from DB')
+        // console.log(req.body)
+        const { _id } = req.body
+
+        try{ 
+            const deletedBuild = await Build.findOneAndDelete() 
+            console.log('Success, deleted build:')
+            console.log(deletedBuild);
+            res.locals.deletedBuild = deletedBuild;
+            return next();
+        } 
+        catch(err){
+            return next({
+                log: "Unable to get delete build from Mongo; deleteBuildDB()",
+                status: 400,
+                message: { err: 'Unable to delete Build from Database'}
+                })
+        }
+    },
+
 
 
 

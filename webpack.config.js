@@ -50,7 +50,8 @@ module.exports = {
             '/resultsLoad': 'http://localhost:3000',
             '/assets': 'http://localhost:3000',
             '/saveBuild': 'http://localhost:3000',
-            '/getAllBuilds': 'http://localhost:3000'
+            '/getAllBuilds': 'http://localhost:3000',
+            '/deleteBuild': 'http://localhost:3000'
         }
     },
     plugins: [

@@ -52,8 +52,8 @@ export const equipmentSlice = createSlice({
                                 + state.aksBuild.price;
         },
         loadOldBuild: (state, action) => {
-            console.log(action.payload.target)
-            console.log(action.payload.data)
+            // console.log(action.payload.target)
+            // console.log(action.payload.data)
 
             const {totalCost,
                     lensBuild,
@@ -70,10 +70,10 @@ export const equipmentSlice = createSlice({
             state.mediaBuild = mediaBuild
             state.gripBuild = gripBuild
             state.aksBuild = aksBuild
-        }
+        },
     }
 })
 
-export const { updateURL, addItem, loadOldBuild} = equipmentSlice.actions
+export const { updateURL, addItem, loadOldBuild } = equipmentSlice.actions
 
 export default equipmentSlice.reducer;

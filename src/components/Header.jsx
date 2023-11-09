@@ -30,17 +30,10 @@ const Header = () => {
     }
 
     const saveBuild = () => {
-        // const {
-        //     lensBuild,
-        //     cameraBuild,
-        //     batteryBuild,
-        //     mediaBuild,
-        //     gripBuild,
-        //     aksBuild
-        // } = currBuild;
-        //if i wanted all to be filled out
 
         if(currBuild.totalCost === 0) return;
+
+        const buildName = document.querySelector('#submission-name')
 
         console.log('clicked')
         console.log('inside: ', currBuild)
@@ -49,7 +42,7 @@ const Header = () => {
             headers: {
             'Content-Type': 'application/json'
             },
-            body: JSON.stringify(currBuild)
+            body: JSON.stringify({...currBuild, name: buildName.value})
         })
         .then(res => res.json())
         .then((res)  => { //an array of product objects
@@ -62,6 +55,7 @@ const Header = () => {
     return(
         <div id="header">
             <div id='top'>
+                <input id="submission-name" placeholder="Project"></input>
             </div>
             <Build />
             <div id='bottom'>

@@ -23,6 +23,12 @@ app.post('/saveBuild', buildController.saveBuildDB, (req, res) => {
     res.status(200).json(newBuild)
 })
 
+app.post('/deleteBuild', buildController.deleteBuildDB, (req, res) => {
+    console.log('back from DB')
+    const deletedBuild = res.locals.deletedBuild;
+    res.status(200).json(deletedBuild)
+})
+
 app.get('/getAllBuilds', buildController.getAllBuildsDB, (req, res) => {
     console.log('back from DB')
     const allBuilds = res.locals.allBuilds;
