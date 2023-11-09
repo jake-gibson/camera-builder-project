@@ -21,7 +21,11 @@ export const equipmentSlice = createSlice({
         batteryBuild: {imgURL: 'battery', price: 0},
         mediaBuild: {imgURL: 'card', price: 0},
         gripBuild: {imgURL: 'grip', price: 0},
-        aksBuild: []
+        aksBuild: {imgURL: 'monitor', price: 0}, 
+                //     {imgURL: 'videofeed', price: 0}, 
+                //     {imgURL: 'mic', price: 0}, 
+                //     {imgURL: 'cables', price: 0}
+                // ]
     },
     reducers: {
         updateURL: (state, action) => {
@@ -44,7 +48,8 @@ export const equipmentSlice = createSlice({
                                 + state.cameraBuild.price 
                                 + state.batteryBuild.price 
                                 + state.mediaBuild.price 
-                                + state.gripBuild.price ;
+                                + state.gripBuild.price 
+                                + state.aksBuild.price;
         }
     }
 })

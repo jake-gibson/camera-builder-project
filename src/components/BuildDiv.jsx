@@ -24,6 +24,7 @@ const BuildDiv = ({ type }) => {
         battery: battery,
         card: card,
         grip: grip,
+        monitor: monitor
     }
 
     const imgSrc = convertStr[imgURL]  ? convertStr[imgURL]  : imgURL
