@@ -26,13 +26,14 @@ const BuildDiv = ({ type }) => {
         grip: grip,
     }
 
-    // const imgSrc = imgURL ? convertStr[imgURL] : imgURL
+    const imgSrc = convertStr[imgURL]  ? convertStr[imgURL]  : imgURL
+    console.log(imgSrc)
 
     return(
         <div className='buildDiv'>
-            <div>{title || ''}</div>
-            <img src={convertStr[imgURL]}></img>
-            <div>{price || ''}</div>
+            {/* <div>{title || ''}</div> */}
+            <img src={imgSrc}></img>
+            {/* <div>{price || ''}</div> */}
         </div>
     );
 }

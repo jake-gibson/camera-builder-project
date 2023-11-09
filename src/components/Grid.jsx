@@ -2,8 +2,9 @@ import React from "react";
 import Result from "./Result.jsx";
 // import Equipment from "./Equipment.jsx";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import backup from "../backup/backup.js";
 
 
 const Grid = () => {
@@ -17,28 +18,32 @@ const Grid = () => {
     
     
     
-    const getResults = () => {
-        console.log('clicked')
-        console.log('inside: ', stateUrl)
-        fetch(`/resultsLoad`, {
-            method: 'POST',
-            headers: {
-            'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({url: stateUrl})
-        })
-        .then(res => res.json())
-        .then((res)  => { //an array of product objects
-            setData(res);
-        })
-    }
+    // const getResults = 
+    useEffect(() => {
+        setData(backup[stateEqType]);
 
-    getResults();
+        // console.log('clicked')
+        // console.log('inside: ', stateUrl)
+        // fetch(`/resultsLoad`, {
+        //     method: 'POST',
+        //     headers: {
+        //     'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({url: stateUrl})
+        // })
+        // .then(res => res.json())
+        // .then((res)  => { //an array of product objects
+        //     console.log(res)
+        //     setData(res);
+        // })
+    }, [])
+
+    // getResults();
 
     const results = [];
 
     for(let i = 0; i < 20; i++){
-        results.push(<Result resultData={data[i]} currEqType={stateEqType} getResults={getResults}/>)
+        results.push(<Result resultData={data[i]} currEqType={stateEqType} />)
     }
 
     return(

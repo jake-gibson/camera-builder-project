@@ -8,7 +8,7 @@
 }
 
 #header {
-    height: 25vh;
+    height: 200px;
     border: 1px solid $light,
 }
 
@@ -19,7 +19,7 @@
 }
 
 .buildDiv {
-    border: 1px solid green;
+    // border: 1px solid green;
     width: 100%;
 
     img {
@@ -30,7 +30,8 @@
 
 #container {
     height: 75vh;
-    border: 1px solid $light;
+    border: 1px solid yellow;
+    // top: 100px;
     display: relative;
 }
 

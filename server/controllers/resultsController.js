@@ -53,7 +53,7 @@ const resultsController = {
             
                 return Array.from(products).slice(0, 20).map((product) => {
                     const title = product.querySelector('h3').innerText || "No Test Available";
-                    const price = product.querySelector("[data-selenium='uppedDecimalPriceFirst']").innerText || "No Price Available";
+                    const price = product.querySelector("[data-selenium='uppedDecimalPriceFirst']").innerText.replace(/\$,/gi, '') || "No Price Available";
                     const photoLink = product.querySelector("[data-selenium='miniProductPageProductImgLink']") || '#';
                     const link = ("https://www.bhphotovideo.com/" + photoLink.href) || '#';
                     const imgURL = photoLink.firstChild.src;

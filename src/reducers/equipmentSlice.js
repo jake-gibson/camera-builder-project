@@ -14,12 +14,13 @@ export const equipmentSlice = createSlice({
     name: 'equip',
     initialState: {
         url: '',
+        totalCost: 0,
         currentEqType: '',
-        lensBuild: {imgURL: 'lens'},
-        cameraBuild: {imgURL: 'camera'},
-        batteryBuild: {imgURL: 'battery'},
-        mediaBuild: {imgURL: 'card'},
-        gripBuild: {imgURL: 'grip'},
+        lensBuild: {imgURL: 'lens', price: 0},
+        cameraBuild: {imgURL: 'camera', price: 0},
+        batteryBuild: {imgURL: 'battery', price: 0},
+        mediaBuild: {imgURL: 'card', price: 0},
+        gripBuild: {imgURL: 'grip', price: 0},
         aksBuild: []
     },
     reducers: {
@@ -39,6 +40,11 @@ export const equipmentSlice = createSlice({
 
             //state[lensBuild] = lens{ title, price, link, imgURL}
             state[objectType[state.currentEqType]] = action.payload.data;
+            state.totalCost = state.lensBuild.price
+                                + state.cameraBuild.price 
+                                + state.batteryBuild.price 
+                                + state.mediaBuild.price 
+                                + state.gripBuild.price ;
         }
     }
 })
