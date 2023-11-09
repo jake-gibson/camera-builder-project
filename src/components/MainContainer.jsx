@@ -7,9 +7,16 @@ import Container from "./Container.jsx";
 
 const MainContainer = () => {
 
+    const [open, setOpen] = useState(false)
     const [buildList, setBuildList] = useState([])
 
     const getBuilds = () => {
+
+        if(open) {
+            setOpen(!open)
+            return;
+        }
+        //fetching all builds
         console.log('clicked, getting all builds')
         fetch(`/getAllBuilds`, {
             method: 'GET',
@@ -25,20 +32,28 @@ const MainContainer = () => {
             const oldBuilds = []
 
             for(let build of allBuilds){
-                oldBuilds.push(<OldBuild name={build.date} data={build}/>)
+                oldBuilds.push(<OldBuild className='old-build' name={build.date} data={build}/>)
             }
             setBuildList(oldBuilds);
+
+            //displaying the old build box:///////////
+            setOpen(!open)
+
+
         })
     }
+
+    //open && 
+    //onMouseLeave={getBuilds}
 
     return(
         <div id="main">
             <div id='nav-bar'>
                 <p id='headText'>Camera Builder</p>
                 <div id='build-list'>
-                    {buildList}
+                    {open && buildList}
                 </div>
-                <button onClick={getBuilds}>Your Builds</button>
+                <button id="your-builds" onMouseEnter={getBuilds}>Your Builds</button>
             </div>
             <Header />
             <Container />

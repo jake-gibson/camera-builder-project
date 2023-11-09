@@ -31,15 +31,54 @@
         // align-items: flex-start;
 
         #build-list {
-            border: 1px solid black;
+            // border: 1px solid black;
             width: 200px;
             max-width: 200px;
+            position: fixed;
+            top: 80px;
+            margin-left: 72.5%;
+        }
+
+        #your-builds {
+            padding: 5px 10px;
+            align-self: flex-end;
+            color: white;
+            border-radius: 5px;
+            background-color: rgb(36, 46, 235);
+            border: .5px solid rgb(239, 239, 239);
         }
 
         button {
+            display: flex;
+            // align-items: center;
             padding: 5px 10px;
             align-self: flex-end;
+            color: rgb(36, 46, 235);
+            border-radius: 5px;
+            background-color: white;
+            border: .5px solid rgb(36, 46, 235);
+            transform: all .3s ease-in;
+
+            div {
+                margin-left: 10px;
+                padding: 2px;
+                border-radius: 50%;
+                color: grey;
+                font-size: 11px;
+            }
+
+            div:hover {
+                color: black;
+                background-color: white;
+                
+            }
         }
+        button:hover {
+            color: rgb(28, 33, 129);
+            background-color: rgb(220, 220, 220);
+            // box-shadow: inset 0px 0px 5px 1px white;
+        }
+
     }
 }
 

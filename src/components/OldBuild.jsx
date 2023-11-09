@@ -9,14 +9,15 @@ const OldBuild = ({ name, data }) => {
     // const {title, price, link, imgURL } = resultData
     //() => dispatch(addItem({data: {title, price: +(price.replace(/[\$,]/g, '')), link, imgURL }}))
 
+    const { totalCost } = data;
+
+    const dateTime = new Date(name).toDateString()
+
+    //TODO:FIXME: onClick={} implement delete old item button
+
     return (
         <button onClick={(target) => dispatch(loadOldBuild({target, data}))} className='oldBuild'>
-            {name}
-            {/* <a src={link || '#'}>
-                <h4>{title || ''}</h4>
-                <img src={`${imgURL}` || ''}></img>
-                <p>{price || ''}</p>
-            </a> */}
+            <p>{dateTime} <br></br>Cost: ${totalCost}</p> <div >X</div>
         </button>
     );
 }
