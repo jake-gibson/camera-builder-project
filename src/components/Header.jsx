@@ -16,12 +16,13 @@ const Header = () => {
         gripBuild: useSelector((state) => state.equip.gripBuild ),
         aksBuild: useSelector((state) => state.equip.aksBuild )
     }
-    // const deciCost = () => {
-    //     let temp = cost + '';
-    //     console.log(temp)
-    //     temp = temp.slice(0, -3) + ',' +  temp.slice(-3)
-    //     return temp;
-    // }
+    const deciCost = () => {
+        if(cost === 0) return 0;
+        let temp = '' + cost;
+        console.log(temp)
+        temp = temp.slice(0, -3) + ',' +  temp.slice(-3)
+        return temp;
+    }
 
     //TODO: trying to get comma into cost again
 
@@ -60,7 +61,7 @@ const Header = () => {
             <Build />
             <div id='bottom'>
                 <button onClick={goBack} className="button">Back</button> 
-                <h4>Cost: ${cost}</h4>
+                <h4>Cost:  <sup>$</sup>{deciCost()}</h4>
                 <button onClick={saveBuild} className="button">+</button>
             </div>
         </div>
