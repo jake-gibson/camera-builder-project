@@ -1,35 +1,83 @@
 import React from "react";
+import styled from "styled-components";
 import Grid from "./Grid.jsx";
 import BrandGrid from "./BrandGrid.jsx";
 import EqGrid from "./EqGrid.jsx";
-// import { useState } from "react";
+import { useState, useEffect } from "react";
+
 import { useSelector } from "react-redux";
-import { BrowserRouter as Router, Route, Routes, Link, Outlet } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useLocation, Link, Outlet } from "react-router-dom";
 
-const Container = () => {
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-    // const url = useSelector((state) => { state.equip.url })
+// const StyledGrid = styled.div`
+// .transition-enter {
+//     opacity: 0.01;
+//     transform: translate(0, -10px)
+// }
 
-    // const [url, setUrl] = useState('');
-    //TODO: Will need to implement redux so that I can send current url across components
-    // so that you can use it in the fetch request in Grid, and useEffect in grid to fetch?? so it goes immediately
-//url={url}
+// .transition-enter-active {
+//     opacity: 1;
+//     transform: translate(0, 0);
+//     transition: all .3s ease-in;
+// }
+
+// .transition-exit {
+//     opacity: 1;
+//     transform: translate(0, 0)  
+// }
+
+// .transition-exit-active {
+//     opacity: 0.01;
+//     transform: translate(0, 10px);
+//     transition: all .3s ease-in;
+// }
+// `;
+
+const Container = (props) => {
+
+    const [depth, setDepth] = useState(-1)
+    const location = useLocation();
+    const timeout = { enter: 450, exit: 450}
+
+    const getDepth = (location) => {
+        let pathArr = location.pathname.split('/')
+        pathArr = pathArr.filter(n => n !== '');
+        return pathArr.length;
+    }
+
+    // useEffect(() => {
+    
+    // }, [])
+
+
     return(
-        <Router>
+        
             <div id="container">
-                <Routes>
-                    <Route exact path='/results' element={<Grid />} />
-                    <Route exact path='/lens' element={<BrandGrid eqType={'Lens'}/>} />
-                    <Route exact path='/camera' element={<BrandGrid eqType={'Camera'}/>} />
-                    <Route exact path='/battery' element={<BrandGrid eqType={'Battery'}/>} />
-                    <Route exact path='/media' element={<BrandGrid eqType={'Media'}/>} />
-                    <Route exact path='/grip' element={<BrandGrid eqType={'Grip'}/>} />
-                    <Route exact path='/AKS' element={<BrandGrid eqType={'AKS'}/>} />
-                    <Route exact path="/" element={<EqGrid />} />
-                    {/* <Route path="*" element={<NoMatch />} /> */}
-                </Routes>
+
+                {/* <TransitionGroup id="container" component="div">
+                <CSSTransition
+                    // key={location.key}
+                    timeout={timeout}
+                    classNames="transition"
+                    mountOnEnter={false}
+                    unmountOnExit={true}
+                > */}
+                    <Routes location={location} key={location.pathname} >
+                        <Route exact path='/results' element={<Grid />} />
+                        <Route exact path='/lens' element={<BrandGrid eqType={'Lens'}/>} />
+                        <Route exact path='/camera' element={<BrandGrid eqType={'Camera'}/>} />
+                        <Route exact path='/battery' element={<BrandGrid eqType={'Battery'}/>} />
+                        <Route exact path='/media' element={<BrandGrid eqType={'Media'}/>} />
+                        <Route exact path='/grip' element={<BrandGrid eqType={'Grip'}/>} />
+                        <Route exact path='/AKS' element={<BrandGrid eqType={'AKS'}/>} />
+                        <Route exact path="/" element={<EqGrid />} />
+                        {/* <Route path="*" element={<NoMatch />} /> */}
+                    </Routes>
+                {/* </CSSTransition>
+                </TransitionGroup> */}
             </div>
-        </Router>
+        
     );
 }
 

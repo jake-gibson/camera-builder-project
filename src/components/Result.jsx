@@ -11,9 +11,9 @@ const Result = ({ currEqType, resultData }) => {
     return (
         <button onClick={() => dispatch(addItem({data: {title, price: +(price.replace(/[\$,]/g, '')), link, imgURL }}))} className='result'>
             <a src={link || '#'}>
-                <div>{title || ''}</div>
+                <h4>{title || ''}</h4>
                 <img src={`${imgURL}` || ''}></img>
-                <div>{price || ''}</div>
+                <p>{price || ''}</p>
             </a>
         </button>
     );

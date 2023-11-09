@@ -1,9 +1,9 @@
 import React from "react";
 import Result from "./Result.jsx";
 // import Equipment from "./Equipment.jsx";
-import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+
 import backup from "../backup/backup.js";
 
 

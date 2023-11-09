@@ -10,7 +10,11 @@ const Header = () => {
         <div id="header">
             <h3>Camera Builder</h3>
             <Build />
-            <h4>Cost: ${cost}</h4>
+            <div id='bottom'>
+                <button>Home</button>
+                <button>Back</button>  
+                <h4>Cost: ${cost}</h4>
+            </div>
         </div>
     );
 }
