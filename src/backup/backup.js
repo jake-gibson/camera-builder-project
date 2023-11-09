@@ -609,6 +609,250 @@ AKS: [
     link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1469891-REG/transvideo_917ts0164_6_superbright_on_board_monitor.html',
     imgURL: 'https://static.bhphoto.com/images/images345x345/1559149957_1469891.jpg'
   }
+],
+Battery: [
+  {
+    title: 'Anton/Bauer Dionic XT 150Wh Gold-Mount Lithium-Ion Battery',
+    price: '$629',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1431985-REG/anton_bauer_8675_0127_dionic_xt150gm_battery.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1561547237_1431985.jpg'
+  },
+  {
+    title: 'IndiPRO Tools Compact 95Wh Gold-Mount Li-ion Battery',
+    price: '$209',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1204090-REG/indipro_tools_pd95adigi_compact_95wh_gold_mount_li_ion.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1551693009_1204090.jpg'
+  },
+  {
+    title: 'Watson Pro 14.4V 158Wh Slim Li-Ion Battery (Gold Mount)',
+    price: '$170',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1430079-REG/watson_am_160_se_watson_160wh_slim_vmount.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1552559001_1430079.jpg'
+  },
+  {
+    title: 'Anton/Bauer Titon SL 150 143Wh 14.4V Battery (Gold Mount)',
+    price: '$399',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1503684-REG/anton_bauer_8675_0157_titon_sl_150_battery.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1568245695_1503684.jpg'
+  },
+  {
+    title: 'IndiPRO Tools Gold-Mount Battery and Plate with 4-Pin XLR Kit',
+    price: '$332',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1203245-REG/indipro_tools_v_mount_battery_and_plate.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1552585827_1203245.jpg'
+  },
+  {
+    title: 'IndiPRO Tools Compact 95Wh Gold-Mount Li-ion Battery',
+    price: '$199',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1181612-REG/indipro_tools_pd95a_compact_95wh_gold_mount_li_ion.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1551692993_1181612.jpg'
+  },
+  {
+    title: 'PAG HCPL150T 150Wh 14.8V Gold-Mount Time Battery',
+    price: '$707',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1291425-REG/pag_9313_pl150_series_150wh_intelligent.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1550147198_1291425.jpg'
+  },
+  {
+    title: 'Jupio 10700mAh 14.4V Replacement Broadcast Battery for Gold-Mount Battery',
+    price: '$429',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1260691-REG/jupio_ju_bgm0003_10700mah_14_4v_replacement_broadcast.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1467647376_1260691.jpg'
+  },
+  {
+    title: 'Jupio 7800mAh 14.4V Replacement Broadcast Battery for Gold-Mount Battery',
+    price: '$349',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1260690-REG/jupio_ju_bgm0002_7800mah_14_4v_replacement_broadcast.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1467647376_1260690.jpg'
+  },
+  {
+    title: 'Jupio 5200mAh 14.4V Replacement Broadcast Battery for Gold-Mount Battery',
+    price: '$284',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1260689-REG/jupio_ju_bgm0001_5200mah_14_4v_replacement_broadcast.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1467646707_1260689.jpg'
+  },
+  {
+    title: 'IndiPRO Tools Gold-Mount Battery and Plate with Canon LP-E6 Dummy Battery Kit',
+    price: '$349',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1203244-REG/indipro_tools_v_mount_battery_and_plate.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1552585827_1203244.jpg'
+  },
+  {
+    title: 'Anton/Bauer Titon 90 Gold Mount Lithium-Ion Battery',
+    price: '$329',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1466924-REG/anton_bauer_8675_0131_titon_90_gold_nbsp_mount_lithium_ion.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1554249107_1466924.jpg'
+  },
+  {
+    title: 'Anton/Bauer Titon SL 90 95Wh 14.4V Battery (Gold Mount)',
+    price: '$339',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1593585-REG/anton_bauer_8675_0115_titon_sl_90_95wh.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1599734144_1593585.jpg'
+  },
+  {
+    title: 'Core SWX NANO Micro 147Wh Lithium-Ion Battery (Gold Mount)',
+    price: '$299',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1660021-REG/core_swx_nano_g150_147wh_micro_sized.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1629728451_1660021.jpg'
+  },
+  {
+    title: 'Anton/Bauer Titon 150 Gold Mount Lithium-Ion Battery',
+    price: '$489',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1466926-REG/anton_bauer_8675_0137_titon_150_gold_mount.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1554249107_1466926.jpg'
+  },
+  {
+    title: 'Anton/Bauer Dionic 240Wh 26V Gold Mount Plus Battery',
+    price: '$973',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1503679-REG/anton_bauer_8675_0156_dionic_240wh_26v_battery.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1568649149_1503679.jpg'
+  },
+  {
+    title: 'Watson Pro Cine High-Load Gold Mount Battery',
+    price: '$399',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1327866-REG/watson_am_148_hcs_r_a_mount_148wh_10_3ah.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1506525744_1327866.jpg'
+  },
+  {
+    title: 'Core SWX Hypercore NEO 150 Mini 147Wh Lithium-Ion Battery (Gold Mount)',
+    price: '$399',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1560017-REG/core_swx_neo_150ag_high_output_146wh_14_8v.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1588683990_1560017.jpg'
+  },
+  {
+    title: 'Core SWX Hypercore NEO 9 Mini 98Wh Lithium-Ion Battery (Gold Mount)',
+    price: '$259',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1505986-REG/core_swx_neo_9ag_98wh_hop_3_stud_mount.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1568288806_1505986.jpg'
+  },
+  {
+    title: 'Fxlion AN-7S270 26V 270Wh Lithium-Ion Battery (Gold Mount)',
+    price: '$525',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1631275-REG/fxlion_an_7s270_26v_270wh_lithium_ion.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1643972731_1631275.jpg'
+  }
+],
+Media: [
+  {
+    title: 'Delkin Devices 150GB BLACK CFexpress Type B Memory Card',
+    price: '$179',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1702402-REG/delkin_devices_dcfxbblk150_150gb_black_cfexpress_type.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1651621560_1702402.jpg'
+  },
+  {
+    title: 'SanDisk 320GB PRO-CINEMA CFexpress Type B Memory Card',
+    price: '$399',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1783283-REG/sandisk_sdcfec_320g_gn4nn_320gb_pro_cinema_cfexpress_type.html',
+    imgURL: 'https://static.bhphoto.com/images/en/na500x500.jpg'
+  },
+  {
+    title: 'SanDisk 128GB Extreme PRO CFexpress Card Type B',
+    price: '$99',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1551687-REG/sandisk_sdcfe_128g_ancnn_128gb_extreme_pro_cfexpress.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1587380839_1551687.jpg'
+  },
+  {
+    title: 'Delkin Devices 75GB BLACK CFexpress Type B Memory Card',
+    price: '$119',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1702401-REG/delkin_devices_dcfxbblk75_75gb_black_cfexpress_type.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1651621560_1702401.jpg'
+  },
+  {
+    title: 'SanDisk 640GB PRO-CINEMA CFexpress Type B Memory Card',
+    price: '$699',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1783282-REG/sandisk_sdcfec_640g_gn4nn_640gb_pro_cinema_cfexpress_type.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1695135934_1783282.jpg'
+  },
+  {
+    title: 'SanDisk 256GB Extreme PRO CFexpress Card Type B',
+    price: '$139',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1551702-REG/sandisk_sdcfe_256g_ancnn_256gb_extreme_pro_cfexpress.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1587380839_1551702.jpg'
+  },
+  {
+    title: 'Delkin Devices 650GB BLACK CFexpress Type B Memory Card',
+    price: '$539',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1702405-REG/delkin_devices_dcfxbblk650_650gb_black_cfexpress_type.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1651621560_1702405.jpg'
+  },
+  {
+    title: 'SanDisk 512GB Extreme PRO CFexpress Card Type B',
+    price: '$199',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1551703-REG/sandisk_sdcfe_512g_ancnn_512gb_extreme_pro_cfexpress.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1648639255_1551703.jpg'
+  },
+  {
+    title: 'Delkin Devices 325GB BLACK CFexpress Type B Memory Card with CFexpress Type B & UHS-II SD Memory Card Reader',
+    price: '$469',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1728758-REG/delkin_devices_dcfxb325r56_325gb_cfexpress_type_b.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1663717514_1728758.jpg'
+  },
+  {
+    title: 'SanDisk 64GB Extreme PRO CFexpress Card Type B',
+    price: '$59',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1551686-REG/sandisk_sdcfe_064g_ancnn_64gb_extreme_pro_cfexpress.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1648640154_1551686.jpg'
+  },
+  {
+    title: 'Angelbird 512GB AV PRO CFexpress 2.0 Type B SE Memory Card (Special 50th Anniversary Edition)',
+    price: '$129',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1778913-REG/angelbird_512gb_av_pro_cfexpress.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1693570836_1778913.jpg'
+  },
+  {
+    title: 'ProGrade Digital 512GB CFexpress 2.0 Type B Gold Memory Card',
+    price: '$129',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1701396-REG/prograde_digital_pgcfx512gasbh_512gb_cfexpress_2_0_type.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1684144561_1701396.jpg'
+  },
+  {
+    title: 'RED DIGITAL CINEMA 1TB PRO CFexpress 2.0 Type B Memory Card',
+    price: '$269',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1769388-REG/red_digital_cinema_750_0102_red_pro_1tb_cfexpress.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1685542219_1769388.jpg'
+  },
+  {
+    title: 'ProGrade Digital 512GB CFexpress 2.0 Type B Gold Memory Card (2-Pack)',
+    price: '$250',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1701395-REG/prograde_digital_pgcfx512gas2bh_512gb_cfexpress_2_0_type.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1684144561_1701395.jpg'
+  },
+  {
+    title: 'Delkin Devices 512GB POWER CFexpress Type B Memory Card',
+    price: '$174',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1769012-REG/delkin_devices_dcfxbp512g4_512gb_power_cfexpress_memory.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1685484023_1769012.jpg'
+  },
+  {
+    title: 'Delkin Devices 256GB POWER CFexpress Type B Memory Card',
+    price: '$124',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1769009-REG/delkin_devices_dcfxbp256g4_256gb_power_cfexpress_memory.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1685484023_1769009.jpg'
+  },
+  {
+    title: 'Ruggard Leda Memory Card Case for XQD or CFexpress Type B Cards (Black)',
+    price: '$19',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1455699-REG/ruggard_mau_6xqb_leda_memory_card_case.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1558089355_1455699.jpg'
+  },
+  {
+    title: 'Delkin Devices 325GB BLACK G4 CFexpress Type B Memory Card',
+    price: '$279',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1785070-REG/delkin_devices_dcfxbb325_325gb_black_g4_cfexpress.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1693525526_1785070.jpg'
+  },
+  {
+    title: 'SanDisk 128GB Extreme PRO CFexpress Card Type B (3-Pack)',
+    price: '$299',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1599431-REG/sandisk_128gb_extreme_pro_cfexpress.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1603132542_1599431.jpg'
+  },
+  {
+    title: 'ProGrade Digital 256GB CFexpress 2.0 Type B Gold Memory Card',
+    price: '$99',
+    link: 'https://www.bhphotovideo.com/https://www.bhphotovideo.com/c/product/1548486-REG/prograde_digital_pgcfx256gapbh_digital_256gb_cfexpress_2_0.html',
+    imgURL: 'https://static.bhphoto.com/images/images345x345/1614189956_1548486.jpg'
+  }
 ]
 }
 

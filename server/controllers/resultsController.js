@@ -1,8 +1,8 @@
 const path = require('path');
 const puppeteer = require('puppeteer');
-const pluginStealth = require('puppeteer-extra-plugin-stealth') 
-const {executablePath} = require('puppeteer'); 
-const proxy = '50.168.163.177:80'
+// const pluginStealth = require('puppeteer-extra-plugin-stealth') 
+// const {executablePath} = require('puppeteer'); 
+// const proxy = '50.168.163.177:80'
 
 const resultsController = {
 

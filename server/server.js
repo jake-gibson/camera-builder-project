@@ -4,6 +4,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const resultsController = require('./controllers/resultsController')
+const buildController = require('./controllers/buildController')
 
 app.use(express.static(path.resolve(__dirname, '../build')))
 app.use(express.json()); //body-parser
@@ -14,6 +15,18 @@ app.post('/resultsLoad', resultsController.getResults, (req, res) => {
     console.log('sending')
     const results = res.locals.scrapeData
     res.status(200).send(results);
+})
+
+app.post('/saveBuild', buildController.saveBuildDB, (req, res) => {
+    console.log('back from DB')
+    const newBuild = res.locals.newBuild;
+    res.status(200).json(newBuild)
+})
+
+app.get('/getAllBuilds', buildController.getAllBuildsDB, (req, res) => {
+    console.log('back from DB')
+    const allBuilds = res.locals.allBuilds;
+    res.status(200).json(allBuilds)
 })
 
 
