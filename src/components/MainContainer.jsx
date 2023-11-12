@@ -4,6 +4,7 @@ import Header from "./Header.jsx";
 import Container from "./Container.jsx";
 // import { openDropdown } from '../reducers/dynamicSlice.js'
 import { useDispatch, useSelector } from "react-redux";
+import { TRUE } from "sass";
 
 
 
@@ -15,6 +16,7 @@ const MainContainer = () => {
 
     const [open, setOpen] = useState(false)
     const [buildList, setBuildList] = useState([])
+    const [empty, setEmpty] = useState(true)
     // const [deleted, setDeleted] = useState(false)
 
     // useEffect(() => {
@@ -47,10 +49,11 @@ const MainContainer = () => {
 
             for(let build of allBuilds){
                 oldBuilds.push(<OldBuild className='old-build' 
-                                        name={build.date} 
+                                        // name={build.date} 
                                         data={build}
                                         deleteBuild={deleteBuild}/>)
             }
+            oldBuilds.length ? setEmpty(false) : setEmpty(true)
             setBuildList(oldBuilds);
 
             //displaying the old build box:///////////
@@ -84,8 +87,9 @@ const MainContainer = () => {
 
             for(let build of oldBuilds){
                 if(build._id === data._id) continue
-                newOldBuilds.push(<OldBuild className='old-build' date={build.date} data={build}/>)
+                newOldBuilds.push(<OldBuild className='old-build' date={build.date} data={build} deleteBuild={deleteBuild}/>)
             }
+            if(!oldBuilds.length) setEmpty(true);
             setBuildList(newOldBuilds);
             setOpen(false);
         })
@@ -96,7 +100,7 @@ const MainContainer = () => {
         <div id="main">
             <div id='nav-bar'>
                 <p id='headText'>💎cameraMode.io</p>
-                {open && <div id='build-list'>
+                {!empty && open && <div id='build-list'>
                     {buildList}
                 </div>}
                 <button id="your-builds" onMouseEnter={getBuilds}>Your Builds</button>

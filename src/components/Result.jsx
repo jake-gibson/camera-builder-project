@@ -8,15 +8,14 @@ const Result = ({ currEqType, resultData }) => {
     
     const {title, price, link, imgURL } = resultData
 
-    // const newTitle = (title) => {
-    //     if(title[38] && title[38] === ' ') return title.slice(0, 38);
-    //     return title.slice(0, 38)
-    // }
+    const newTitle = title?.split(' ').filter((el, i) => {
+            if(i < 6) return el
+        }).join(' ')
 
     return (
         <button onClick={() => dispatch(addItem({data: {title, price: +(price.replace(/[\$,]/g, '')), link, imgURL }}))} className='result'>
             <a src={link || '#'}>
-                <h4>{title || ''}</h4>
+                <h4>{newTitle || ''}</h4>
                 <img src={`${imgURL}` || ''}></img>
                 <p>{price || ''}</p>
             </a>

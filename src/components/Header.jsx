@@ -74,6 +74,7 @@ const Header = () => {
             <Build />
             <div id='bottom'>
                 <button onClick={goBack} className="button">Back</button> 
+                {nameBlank && <div id="warning2">Please fill in Project Form</div>}
                 <h4>Cost:  <sup>$</sup>{deciCost()}</h4>
                 {nameBlank && <div id="warning">Please fill in Project Form</div>}
                 <button onClick={saveBuild} className="button">+</button>

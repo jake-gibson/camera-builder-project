@@ -85,7 +85,7 @@ export const equipmentSlice = createSlice({
       };
 
       const eqType = action.payload.type;
-      
+
       state[eqType] = { imgURL: convertStr[eqType], price: 0 };
       state.totalCost =
         state.lensBuild.price +

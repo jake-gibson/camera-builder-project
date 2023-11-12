@@ -7,7 +7,7 @@ const OldBuild = ({ date, data, deleteBuild }) => {
     const dispatch = useDispatch()
 
     const { totalCost } = data;
-    const dateTime = new Date(date).toDateString()
+    // const dateTime = new Date(date).toDateString()
 
     const deciCost = () => {
         if(totalCost === 0) return 0;

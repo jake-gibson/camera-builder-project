@@ -7,34 +7,41 @@
     font-family: "Nunito";
 }
 #main {
-    // border: 1px solid $primary,
     height:100vh;
     overflow: hidden;
     // background-color: rgb(52, 114, 156);
-    background: linear-gradient(rgba(41, 145, 197, .75), rgba(156, 222, 220, 0.702));
+    background: linear-gradient(rgba(41, 145, 197, 0), rgba(41, 145, 197, .75));
+    // background: linear-gradient(rgba(41, 145, 197, .75), rgba(156, 222, 220, 0.702));
     display: flex;
     flex-direction: column;
-
-     #headText {
+    
+    #headText {
         text-align: center;
-        margin: 10px 0 0 0;
+        // margin: 10px 0 0 0;
+        margin: 0px 15px 0;
         padding: 5px;
         font-family: "open sans";
         font-weight: 800;
         font-size: 5vw;
+        // max-width: 100px;
         // color: rgb(18, 46, 113);
-        background: -webkit-linear-gradient(.25turn, rgb(36, 46, 235), rgb(162, 196, 212));
+        background: -webkit-linear-gradient(.25turn, rgba(36, 46, 235, 0.772), rgb(162, 196, 212));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         -webkit-text-stroke-color: rgb(11, 34, 138);
         -webkit-text-stroke-width: 1px;
-        }
-
+        @media screen and (min-width: 700px) {
+            font-size: 35px;
+            }
+    }
+    
     #nav-bar {
+        // border: 1px solid $primary;
+        width: 100%;
         display: flex;
         justify-content: space-between;
-        margin: 0 15px;
-        // align-items: flex-start;
+        // background-color: rgba(41, 145, 197, .75);
+        align-items: center;
 
         #build-list {
             // border: 1px solid black;
@@ -52,13 +59,17 @@
         #your-builds {
             padding: 5px 10px;
             width: 68px;
-            margin-right: 45px;
+            margin-right: 10vw;
             align-self: flex-end;
             color: white;
             border-radius: 5px;
             background-color: rgb(36, 46, 235);
             border: .5px solid rgb(239, 239, 239);
             transition: all .2s ease 0s;
+
+            @media screen and (min-width: 700px) {
+                
+            }
         }
 
         #your-builds:hover {
@@ -115,15 +126,18 @@
 }
 
 #header {
-    height: 55vw;
-    min-height: 33vw;
+    height: 200px;
+    // min-height: 33vw;
+    padding: 5px 10px;
+    max-width: 850px;
     background-color: white;
     // background: linear-gradient(1turn, rgb(255, 255, 255), 90%,rgb(41, 145, 197));
     border-radius: 20px;
-    margin: 10px 20px;
+    margin: auto;
     // padding: 2px;
-    box-shadow: 0px 0px 10px .2px #46829c;
-    // border: 1px solid $light,
+    box-shadow: 0px 0px 10px .01px #00000050;
+    // border: 1px solid $light;
+    
 
     #submission-name {
         position: fixed;
@@ -138,14 +152,25 @@
         font-size: 20px;
         text-align: right;
         font-weight: 500;
+        transition: all .2s ease 0s;
     }
 
     #warning {
         color: rgb(235, 76, 76);
-        font-size: 12px;
-        position: fixed;
-        top: 265px;
-        left: 510px;
+        font-size: 9px;
+        margin-top: 8px;
+        // position: fixed;
+        // top: 32vh;
+        // left: 70vw;
+        transition: all .3s ease 0s;
+    }
+
+     #warning2 {
+        color: transparent;
+        font-size: 9px;
+        // position: fixed;
+        // top: 32vh;
+        // left: 70vw;
         transition: all .3s ease 0s;
     }
 
@@ -153,13 +178,14 @@
     #bottom {
         display: flex;
         justify-content: space-between;
-        align-content: center;
+        align-content: flex-end;
         margin: 0px 15px;
         
 
         .button {
             color: white;
             // width: 10vw;
+            // max-height: 30px;
             background-color: rgb(36, 46, 235);
             border: 1px solid rgb(239, 239, 239);
             border-radius: 5px;
@@ -171,6 +197,10 @@
             // margin-top: 4vw;
             // height: 30px;
             transition: all .1s ease 0s;
+            @media screen and (min-width: 700px) {
+            font-size: 17px;
+            }
+            margin-bottom: 7px;
         }
 
         .button:hover {
@@ -191,6 +221,7 @@
             // padding: 0 1.5vw;
             // margin-top: 4vw;
             // height: 30px;
+            
         }
     }
 
@@ -200,10 +231,16 @@
         
         // margin-left: auto;
         // margin-right: 10px;
-        width: 25%;
+        width: 35%;
         border: 1px dotted rgb(36, 46, 235);
         border-radius: 10px;
         font-size: 3vw;
+        transition: all .1s ease 0s;
+        margin-bottom: 7px;
+
+        @media screen and (min-width: 700px) {
+            font-size: 25px;
+        }
 
         sup {
             font-size: 12px;
@@ -214,12 +251,13 @@
 
 #build {
     display: flex;
+    justify-content: space-around;
     height: 100px;
     padding: 5px;
     transition: all 1s ease-in;
-    max-width: 600px;
+    // max-width: 600px;
     margin-top: 45px;
-    margin-bottom: 3vw;
+    // margin-bottom: 3vw;
     // border: 1px solid black;
     // @media screen and (max-width: 600px){
     //     // background-color: green;
@@ -240,35 +278,45 @@
 
     img {
         width: 15vw;
+        max-width:100px;
         height: auto;
         border-radius: 10px;
         box-shadow: 0px 0px 7px 2px white;
+        // transition: all .1s ease 0s;
         // @media screen and (max-width: 600px){
         // width: 75px;
     // };
     }
+
+    img:active {
+        transform: scale(1.05, 1.05);
+        // opacity: .25;
+        filter: blur(2px);
+    }
 }
+
 
 #container {
     // height: 75vh;
     // border: 1px solid yellow;
     // top: 100px;
     display: relative;
-    margin: 10px;
+    // margin: 10px 10px 0px;
+    padding: 10px;
 }
 
 #grid {
     height: 70vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    // gap: 1px;
+    // row-gap: 1px;
     overflow: scroll;
 }
 
 .result {
     background-color: white;
-    width: 80%;
-    height: 82%;
+    width: 81%;
+    height: 83%;
     // margin: 3vw;
     padding: 2vw;
     text-align: center;
@@ -280,6 +328,7 @@
     justify-content: space-between;
     // overflow: hidden;
     // border: 1vw solid $light,
+    // transition: all .3s ease 0s;
 
     h4 {
         text-align: left;
@@ -301,10 +350,15 @@
     img {
         width: 15vw;
         height: auto;
-        margin: 10px 0;
+        margin: 2vw 0;
         transform: rotate(-.05turn);
     }
+
 }
+
+    .result:active {
+        transform: scale(1.01, 1.01);
+    }
 
 #eq-grid {
     display: grid;
@@ -332,7 +386,12 @@
     font-size: 30px;
     background-color: rgba(241, 241, 241, 0.611);
     box-shadow: inset 2px 2px 8px .01px #ffffff;
-}
+    transition: all .1s ease 0s;
+    }
+
+    .equipment:active {
+        transform: scale(1.01, 1.01);
+    }
 
 #brand-grid {
     display: grid;
@@ -359,7 +418,12 @@
     border-radius: 10px;
     font-size: 20px;
     box-shadow: inset 0px 0px 8px .01px #f5f5f5;
-}
+    transition: all .1s ease 0s;
+    }
+
+    .brand:active {
+        transform: scale(1.01, 1.01);
+    }
 
 // .transition-enter {
 //     opacity: 0.01;
