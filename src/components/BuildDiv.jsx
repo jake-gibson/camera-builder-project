@@ -8,10 +8,11 @@ import monitor from '../assets/monitor.PNG'
 import videofeed from '../assets/videofeed.PNG'
 import mic from '../assets/microphone.PNG'
 import cables from '../assets/cables.PNG'
-import { useSelector } from "react-redux";
+import { remove } from '../reducers/equipmentSlice'
+import { useDispatch, useSelector } from "react-redux";
 
 const BuildDiv = ({ type }) => {
-    
+    const dispatch = useDispatch()
     // const stateEqType = useSelector((state) => state.equip.currentEqType );
     // const type = objectType[stateEqType]
     const buildObj = useSelector((state) => state.equip[type] )
@@ -31,7 +32,7 @@ const BuildDiv = ({ type }) => {
     // console.log(imgSrc)
 
     return(
-        <div className='buildDiv'>
+        <div onClick={() => dispatch(remove({type}))} className='buildDiv'>
             {/* <div>{title || ''}</div> */}
             <img src={imgSrc}></img>
             {/* <div>{price || ''}</div> */}

@@ -95,7 +95,7 @@ const MainContainer = () => {
     return(
         <div id="main">
             <div id='nav-bar'>
-                <p id='headText'>cameraMode.io</p>
+                <p id='headText'>💎cameraMode.io</p>
                 {open && <div id='build-list'>
                     {buildList}
                 </div>}

@@ -1,9 +1,13 @@
 import React from "react";
 import Build from "./Build.jsx";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 import { Link, HistoryRouterProps } from "react-router-dom";
 
 const Header = () => {
+
+    const [nameBlank, setBlank] = useState(false)
+    // const [home, setHome] = useState(true)
 
     const cost = useSelector((state) => state.equip.totalCost )
     const currBuild = {
@@ -27,14 +31,23 @@ const Header = () => {
     //TODO: trying to get comma into cost again
 
     const goBack = () => {
+        // console.log(location, 'YUP:', location.pathname)
         history.go(-1)
+        // if(location.pathname === '/') setHome(true);
     }
 
     const saveBuild = () => {
 
+        
         if(currBuild.totalCost === 0) return;
-
+        
         const buildName = document.querySelector('#submission-name')
+        if(buildName.value === '') {
+            setBlank(true)
+            return;
+        }
+
+        setBlank(false);
 
         console.log('clicked')
         console.log('inside: ', currBuild)
@@ -62,6 +75,7 @@ const Header = () => {
             <div id='bottom'>
                 <button onClick={goBack} className="button">Back</button> 
                 <h4>Cost:  <sup>$</sup>{deciCost()}</h4>
+                {nameBlank && <div id="warning">Please fill in Project Form</div>}
                 <button onClick={saveBuild} className="button">+</button>
             </div>
         </div>
