@@ -48,8 +48,9 @@
             padding: 5px;
             border-radius: 5px;
             position: fixed;
-            top: 80px;
-            margin-left: 72.5%;
+            top: 55px;
+            right: 2vw;
+            // margin-right: 10vw;
             background: linear-gradient(1turn, rgba(87, 157, 193, 0.496), #9cdedc7c);;
             display: flex;
             flex-direction: column;
@@ -59,13 +60,14 @@
         #your-builds {
             padding: 5px 10px;
             width: 68px;
-            margin-right: 10vw;
+            margin-right: 5.5vw;
             align-self: flex-end;
             color: white;
             border-radius: 5px;
-            background-color: rgb(36, 46, 235);
+            background-color: $primary;
             border: .5px solid rgb(239, 239, 239);
             transition: all .2s ease 0s;
+            z-index: 3;
 
             @media screen and (min-width: 700px) {
                 
@@ -84,10 +86,10 @@
             margin-bottom: 5px;
             padding: 5px 10px;
             align-self: flex-end;
-            color: rgb(36, 46, 235);
+            color: $primary;
             border-radius: 5px;
             background-color: white;
-            border: .5px solid rgb(36, 46, 235);
+            border: .5px solid $primary;
             transition: all .2s ease 0s;
 
             p {
@@ -100,10 +102,10 @@
                 font-size: 15px;
             }
 
-            div {
+            div { //delete
                 margin-left: auto;
                 margin-right: 0px;
-                padding: 2px;
+                padding: 0px 4px;
                 border-radius: 50%;
                 color: grey;
                 // margin-right: 0px;
@@ -111,9 +113,10 @@
             }
 
             div:hover {
-                color: black;
-                background-color: white;
-                
+                color: red;
+                // background-color: white;
+                font-weight: 700;
+                // box-shadow: 0px 0px 3px .5px white;
             }
         }
         button:hover {
@@ -141,13 +144,13 @@
 
     #submission-name {
         position: fixed;
-        margin-top: 8px;
+        margin-top: 6px;
         margin-left: 4vw;
         padding: 2px 2px;
         width: 150px;
         height: 25px;
         border: none;
-        border-bottom: 2px dotted blue;
+        border-bottom: 2px dotted $secondary;
         outline: none;
         font-size: 20px;
         text-align: right;
@@ -186,7 +189,7 @@
             color: white;
             // width: 10vw;
             // max-height: 30px;
-            background-color: rgb(36, 46, 235);
+            background-color: $primary;
             border: 1px solid rgb(239, 239, 239);
             border-radius: 5px;
             font-size: 2vw;
@@ -226,13 +229,13 @@
     }
 
     h4 {
-        color: rgb(36, 46, 235);
+        color: $secondary;
         text-align: center;
         
         // margin-left: auto;
         // margin-right: 10px;
         width: 35%;
-        border: 1px dotted rgb(36, 46, 235);
+        border: 1px dotted $secondary;
         border-radius: 10px;
         font-size: 3vw;
         transition: all .1s ease 0s;

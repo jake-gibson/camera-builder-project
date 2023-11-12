@@ -25,6 +25,7 @@ const Header = () => {
         let temp = '' + cost;
         console.log(temp)
         temp = temp.slice(0, -3) + ',' +  temp.slice(-3)
+        if(temp.length < 5) temp = temp.slice(1)
         return temp;
     }
 
