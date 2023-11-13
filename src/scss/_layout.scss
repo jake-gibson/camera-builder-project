@@ -75,7 +75,7 @@
         }
 
         #your-builds:hover {
-            background-color: rgba(33, 42, 224, 0.598);
+            background-color: $primaryhover;
         }
 
         button {
@@ -207,11 +207,11 @@
         }
 
         .button:hover {
-            background-color: rgba(33, 42, 224, 0.598);
+            background-color: $primaryhover;
         }
 
         .button:active {
-            background-color: rgba(44, 53, 216, 0.796);
+            background-color: $primaryactive;
         }
 
         button {
