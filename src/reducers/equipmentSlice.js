@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 // import lens from '../assets/lens.PNG'
 // import camera from '../assets/camera.PNG'
@@ -11,17 +11,17 @@ import { createSlice } from "@reduxjs/toolkit";
 // import cables from '../assets/cables.PNG'
 
 export const equipmentSlice = createSlice({
-  name: "equip",
+  name: 'equip',
   initialState: {
-    url: "",
+    url: '',
     totalCost: 0,
-    currentEqType: "",
-    lensBuild: { imgURL: "lens", price: 0 },
-    cameraBuild: { imgURL: "camera", price: 0 },
-    batteryBuild: { imgURL: "battery", price: 0 },
-    mediaBuild: { imgURL: "card", price: 0 },
-    gripBuild: { imgURL: "grip", price: 0 },
-    aksBuild: { imgURL: "monitor", price: 0 },
+    currentEqType: '',
+    lensBuild: { imgURL: 'lens', price: 0, quantity: 0, loaded: false },
+    cameraBuild: { imgURL: 'camera', price: 0, quantity: 0, loaded: false },
+    batteryBuild: { imgURL: 'battery', price: 0, quantity: 0, loaded: false },
+    mediaBuild: { imgURL: 'card', price: 0, quantity: 0, loaded: false },
+    gripBuild: { imgURL: 'grip', price: 0, quantity: 0, loaded: false },
+    aksBuild: { imgURL: 'monitor', price: 0, quantity: 0, loaded: false },
     //     {imgURL: 'videofeed', price: 0},
     //     {imgURL: 'mic', price: 0},
     //     {imgURL: 'cables', price: 0}
@@ -34,23 +34,33 @@ export const equipmentSlice = createSlice({
     },
     addItem: (state, action) => {
       const objectType = {
-        Lens: "lensBuild",
-        Camera: "cameraBuild",
-        Battery: "batteryBuild",
-        Media: "mediaBuild",
-        Grip: "gripBuild",
-        AKS: "aksBuild",
+        Lens: 'lensBuild',
+        Camera: 'cameraBuild',
+        Battery: 'batteryBuild',
+        Media: 'mediaBuild',
+        Grip: 'gripBuild',
+        AKS: 'aksBuild',
       };
 
       //state[lensBuild] = lens{ title, price, link, imgURL}
-      state[objectType[state.currentEqType]] = action.payload.data;
-      state.totalCost =
-        state.lensBuild.price +
-        state.cameraBuild.price +
-        state.batteryBuild.price +
-        state.mediaBuild.price +
-        state.gripBuild.price +
-        state.aksBuild.price;
+      //basically saying, if the product is the same as the one already there skip
+      if (
+        action.payload.data.imgURL !==
+        state[objectType[state.currentEqType]].imgURL
+      ) {
+        state[objectType[state.currentEqType]] = {
+          ...action.payload.data,
+          quantity: 0,
+          loaded: true,
+        };
+        state.totalCost =
+          state.lensBuild.price +
+          state.cameraBuild.price +
+          state.batteryBuild.price +
+          state.mediaBuild.price +
+          state.gripBuild.price +
+          state.aksBuild.price;
+      }
     },
     loadOldBuild: (state, action) => {
       // console.log(action.payload.target)
@@ -76,17 +86,23 @@ export const equipmentSlice = createSlice({
     },
     remove: (state, action) => {
       const convertStr = {
-        lensBuild: "lens",
-        cameraBuild: "camera",
-        batteryBuild: "battery",
-        mediaBuild: "card",
-        gripBuild: "grip",
-        aksBuild: "monitor",
+        lensBuild: 'lens',
+        cameraBuild: 'camera',
+        batteryBuild: 'battery',
+        mediaBuild: 'card',
+        gripBuild: 'grip',
+        aksBuild: 'monitor',
       };
 
       const eqType = action.payload.type;
 
-      state[eqType] = { imgURL: convertStr[eqType], price: 0 };
+      state[eqType] = {
+        imgURL: convertStr[eqType],
+        price: 0,
+        quantity: 0,
+        loaded: false,
+      };
+      //area for refactoring cleaning up bulk, making utility functions
       state.totalCost =
         state.lensBuild.price +
         state.cameraBuild.price +
@@ -95,10 +111,28 @@ export const equipmentSlice = createSlice({
         state.gripBuild.price +
         state.aksBuild.price;
     },
+    increment: (state, action) => {
+      const eqType = action.payload.type;
+
+      state[eqType].quantity++;
+    },
+    decrement: (state, action) => {
+      const eqType = action.payload.type;
+
+      if (state[eqType].quantity !== 0) {
+        state[eqType].quantity--;
+      }
+    },
   },
 });
 
-export const { updateURL, addItem, loadOldBuild, remove } =
-  equipmentSlice.actions;
+export const {
+  updateURL,
+  addItem,
+  loadOldBuild,
+  remove,
+  increment,
+  decrement,
+} = equipmentSlice.actions;
 
 export default equipmentSlice.reducer;
