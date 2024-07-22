@@ -1,21 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-// import lens from '../assets/lens.PNG'
-// import camera from '../assets/camera.PNG'
-// import battery from '../assets/battery.PNG'
-// import card from '../assets/card.PNG'
-// import grip from '../assets/tripod.PNG'
-// import monitor from '../assets/monitor.PNG'
-// import videofeed from '../assets/videofeed.PNG'
-// import mic from '../assets/microphone.PNG'
-// import cables from '../assets/cables.PNG'
-
 export const equipmentSlice = createSlice({
   name: 'equip',
   initialState: {
     url: '',
     totalCost: 0,
     currentEqType: '',
+    currentAiBuild: { imgURL: 'none', price: 0, quantity: 0, loaded: false },
     lensBuild: { imgURL: 'lens', price: 0, quantity: 0, loaded: false },
     cameraBuild: { imgURL: 'camera', price: 0, quantity: 0, loaded: false },
     batteryBuild: { imgURL: 'battery', price: 0, quantity: 0, loaded: false },
@@ -50,16 +41,16 @@ export const equipmentSlice = createSlice({
       ) {
         state[objectType[state.currentEqType]] = {
           ...action.payload.data,
-          quantity: 0,
+          quantity: 1,
           loaded: true,
         };
         state.totalCost =
-          state.lensBuild.price +
-          state.cameraBuild.price +
-          state.batteryBuild.price +
-          state.mediaBuild.price +
-          state.gripBuild.price +
-          state.aksBuild.price;
+          state.lensBuild.price * state.lensBuild.quantity +
+          state.cameraBuild.price * state.cameraBuild.quantity +
+          state.batteryBuild.price * state.batteryBuild.quantity +
+          state.mediaBuild.price * state.mediaBuild.quantity +
+          state.gripBuild.price * state.gripBuild.quantity +
+          state.aksBuild.price * state.aksBuild.quantity;
       }
     },
     loadOldBuild: (state, action) => {
@@ -104,24 +95,36 @@ export const equipmentSlice = createSlice({
       };
       //area for refactoring cleaning up bulk, making utility functions
       state.totalCost =
-        state.lensBuild.price +
-        state.cameraBuild.price +
-        state.batteryBuild.price +
-        state.mediaBuild.price +
-        state.gripBuild.price +
-        state.aksBuild.price;
+        state.lensBuild.price * state.lensBuild.quantity +
+        state.cameraBuild.price * state.cameraBuild.quantity +
+        state.batteryBuild.price * state.batteryBuild.quantity +
+        state.mediaBuild.price * state.mediaBuild.quantity +
+        state.gripBuild.price * state.gripBuild.quantity +
+        state.aksBuild.price * state.aksBuild.quantity;
     },
     increment: (state, action) => {
       const eqType = action.payload.type;
+      const preChange = state[eqType].price * state[eqType].quantity;
+      const postChange = state[eqType].price * (state[eqType].quantity + 1);
 
       state[eqType].quantity++;
+      state.totalCost = state.totalCost - preChange + postChange;
     },
     decrement: (state, action) => {
       const eqType = action.payload.type;
 
       if (state[eqType].quantity !== 0) {
+        const preChange = state[eqType].price * state[eqType].quantity;
+        const postChange = state[eqType].price * (state[eqType].quantity - 1);
+
         state[eqType].quantity--;
+        state.totalCost = state.totalCost - preChange + postChange;
       }
+    },
+    aiQuery: (state, action) => {
+      const eqType = action.payload.type;
+
+      state.currentAiBuild = state[eqType];
     },
   },
 });
@@ -133,6 +136,7 @@ export const {
   remove,
   increment,
   decrement,
+  aiQuery,
 } = equipmentSlice.actions;
 
 export default equipmentSlice.reducer;
