@@ -1,6 +1,6 @@
 # Welcome to cameraMode.io!
 
-cameraMode is a production budgeting tool for media company on-set professionals. You can use this tools to aggregate product information for camera packages and save options for future lookup and comparison. I am currently working on integrating an AI comparison feature that leverages OpenAI for product research.
+<b><i>cameraMode.io</i></b> is a production budgeting tool for media company on-set professionals. You can use this tool to aggregate product information for camera packages, saving options for future lookup and comparison. I am currently working on integrating an AI comparison feature that leverages OpenAI for product research.
 
 <img src="https://github.com/jake-gibson/camera-builder-project/blob/main/src/assets/cameraMode.png">
 
