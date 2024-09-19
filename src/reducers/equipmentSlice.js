@@ -3,10 +3,16 @@ import { createSlice } from '@reduxjs/toolkit';
 export const equipmentSlice = createSlice({
   name: 'equip',
   initialState: {
-    url: '',
+    url: '', //not in use, originally built to fetch a given products specs
     totalCost: 0,
     currentEqType: '',
-    currentAiBuild: { imgURL: 'none', price: 0, quantity: 0, loaded: false },
+    aiComparison: {
+      index: 'firstBuild',
+      firstBuild: { imgURL: 'none', price: 0, quantity: 0, loaded: false },
+      secondBuild: { imgURL: 'none', price: 0, quantity: 0, loaded: false },
+      compared: false,
+      comparisonResponse: '',
+    },
     lensBuild: { imgURL: 'lens', price: 0, quantity: 0, loaded: false },
     cameraBuild: { imgURL: 'camera', price: 0, quantity: 0, loaded: false },
     batteryBuild: { imgURL: 'battery', price: 0, quantity: 0, loaded: false },
@@ -40,7 +46,7 @@ export const equipmentSlice = createSlice({
         state[objectType[state.currentEqType]].imgURL
       ) {
         state[objectType[state.currentEqType]] = {
-          ...action.payload.data,
+          ...action.payload.data, //title, price, link, imgURL
           quantity: 1,
           loaded: true,
         };
@@ -123,8 +129,27 @@ export const equipmentSlice = createSlice({
     },
     aiQuery: (state, action) => {
       const eqType = action.payload.type;
+      const currIndex = state.aiComparison.index;
+      console.log(currIndex);
 
-      state.currentAiBuild = state[eqType];
+      //Populate first or second slot for product to compare
+      state.aiComparison[currIndex] = state[eqType];
+      state.aiComparison.index =
+        currIndex === 'firstBuild' ? 'secondBuild' : 'firstBuild';
+
+      //Reset AI Response state upon addition of new product to compare
+      state.aiComparison.compared = false;
+      state.aiComparison.comparisonResponse = '';
+    },
+    toggleCompared: (state, action) => {
+      state.aiComparison.compared = true;
+    },
+    toggleComparedForMiddleware: (state, action) => {
+      state.aiComparison.compared = true;
+
+      //OPTION 2:
+      const aiRes = action.payload;
+      state.aiComparison.comparisonResponse = aiRes;
     },
   },
 });
@@ -137,6 +162,8 @@ export const {
   increment,
   decrement,
   aiQuery,
+  toggleCompared,
+  toggleComparedForMiddleware,
 } = equipmentSlice.actions;
 
 export default equipmentSlice.reducer;

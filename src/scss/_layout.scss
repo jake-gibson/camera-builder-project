@@ -8,6 +8,7 @@
 }
 #main {
   height: 100vh;
+  // width: 550px;
   overflow: hidden;
   // background: linear-gradient(rgba(41, 145, 197, 0.421), rgba(41, 145, 197, 0.75));
   background-color: #dbf2fd;
@@ -56,6 +57,7 @@
       background: linear-gradient(1turn, rgba(87, 157, 193, 0.496), #9cdedc7c);
       display: flex;
       flex-direction: column;
+      z-index: 3;
     }
 
     #your-builds {
@@ -90,6 +92,7 @@
       background-color: white;
       border: 0.5px solid $primary;
       transition: all 0.2s ease 0s;
+      z-index: 3;
 
       p {
         text-align: left;
@@ -99,6 +102,7 @@
 
       b {
         font-size: 15px;
+        z-index: 3;
       }
 
       div {
@@ -273,7 +277,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  z-index: 1;
+  z-index: 0;
   margin-bottom: -10%;
 
   button {
@@ -286,7 +290,7 @@
     align-items: center;
     font-size: 10px;
     font-weight: 600;
-    transition: .1s all ease 0s;
+    transition: 0.1s all ease 0s;
 
     &:active {
       background-color: $primary;
