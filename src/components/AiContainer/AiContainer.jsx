@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleCompared } from '../../reducers/equipmentSlice';
 import { useCompareProductsMutation } from '../../reducers/fetchingAPI';
+const API_BASE_URL =
+  process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_HOST : '';
 
 const AiContainer = () => {
   const dispatch = useDispatch();
@@ -28,7 +30,7 @@ const AiContainer = () => {
   // const compareProducts = () => {
   //   if (!firstObj.loaded || !secondObj.loaded) return;
 
-  //   fetch(`/aiProductInfo?${searchParams.toString()}`)
+  //   fetch(`${API_BASE_URL}/aiProductInfo?${searchParams.toString()}`)
   //     .then((res) => res.json())
   //     .then((res) => {
   //       console.log(res.aiRes);

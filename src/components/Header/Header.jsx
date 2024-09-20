@@ -3,6 +3,8 @@ import Build from './Build.jsx';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { Link, HistoryRouterProps } from 'react-router-dom';
+const API_BASE_URL =
+  process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_HOST : '';
 
 const Header = () => {
   const [nameBlank, setBlank] = useState(false);
@@ -49,7 +51,7 @@ const Header = () => {
 
     console.log('clicked');
     console.log('inside: ', currBuild);
-    fetch(`/saveBuild`, {
+    fetch(`${API_BASE_URL}/saveBuild`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
