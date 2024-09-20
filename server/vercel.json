@@ -11,8 +11,28 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "index.js"
+      "src": "/resultsLoad",
+      "dest": "https://camera-builder-project.vercel.app/resultsLoad"
+    },
+    {
+      "src": "/assets",
+      "dest": "https://camera-builder-project.vercel.app/assets"
+    },
+    {
+      "src": "/saveBuild",
+      "dest": "https://camera-builder-project.vercel.app/saveBuild"
+    },
+    {
+      "src": "/getAllBuilds",
+      "dest": "https://camera-builder-project.vercel.app/getAllBuilds"
+    },
+    {
+      "src": "/deleteBuild",
+      "dest": "https://camera-builder-project.vercel.app/deleteBuild"
+    },
+    {
+      "src": "/aiProductInfo",
+      "dest": "https://camera-builder-project.vercel.app/aiProductInfo"
     }
   ],
   "env": {
