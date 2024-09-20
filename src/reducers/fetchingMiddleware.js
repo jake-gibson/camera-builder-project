@@ -1,6 +1,6 @@
 import { toggleComparedForMiddleware } from './equipmentSlice';
-const API_BASE_URL =
-  process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_HOST : '';
+const API_BASE_URL = '';
+// process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_HOST : '';
 
 const fetchingMiddleware = () => {
   return ({ dispatch, getState }) =>

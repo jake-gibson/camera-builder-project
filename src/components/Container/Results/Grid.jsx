@@ -6,8 +6,8 @@ import { useSelector } from 'react-redux';
 
 import backup from '../../../backup/backup.js';
 
-const API_BASE_URL =
-  process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_HOST : '';
+const API_BASE_URL = '';
+// process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_HOST : '';
 
 const Grid = () => {
   const stateUrl = useSelector((state) => state.equip.url);
