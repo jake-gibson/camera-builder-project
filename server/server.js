@@ -16,7 +16,7 @@ const corsOptions = {
     if (
       !origin ||
       allowedOrigins.includes(origin) ||
-      origin.endsWith('jake-gibsons-projects.vercel.app')
+      origin.endsWith('vercel.app')
     ) {
       callback(null, true); // Allow the request
     } else {
