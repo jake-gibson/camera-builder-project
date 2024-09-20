@@ -1,0 +1,42 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/index.js",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build" // The folder where Webpack outputs the build
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/resultsLoad",
+      "dest": "https://camera-builder-project.vercel.app/resultsLoad" // Your backend URL
+    },
+    {
+      "src": "/assets",
+      "dest": "https://camera-builder-project.vercel.app/assets"
+    },
+    {
+      "src": "/saveBuild",
+      "dest": "https://camera-builder-project.vercel.app/saveBuild"
+    },
+    {
+      "src": "/getAllBuilds",
+      "dest": "https://camera-builder-project.vercel.app/getAllBuilds"
+    },
+    {
+      "src": "/deleteBuild",
+      "dest": "https://camera-builder-project.vercel.app/deleteBuild"
+    },
+    {
+      "src": "/aiProductInfo",
+      "dest": "https://camera-builder-project.vercel.app/aiProductInfo"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "REACT_APP_API_BASE_URL": "https://camera-builder-project.vercel.app" // Frontend uses this to talk to the backend
+  }
+}
