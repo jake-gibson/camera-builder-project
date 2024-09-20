@@ -37,6 +37,6 @@
   ],
   "env": {
     "NODE_ENV": "production",
-    "REACT_APP_API_BASE_URL": "https://camera-builder-project.vercel.app" // Frontend uses this to talk to the backend
+    "REACT_APP_API_BASE_URL": "https://camera-builder-project.vercel.app"
   }
 }
