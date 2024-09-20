@@ -14,9 +14,5 @@
       "src": "/(.*)",
       "dest": "server/server.js"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production",
-    "REACT_APP_API_BASE_URL": "https://camera-builder-project.vercel.app"
-  }
+  ]
 }
