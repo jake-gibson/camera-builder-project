@@ -6,6 +6,9 @@ import { useSelector } from 'react-redux';
 
 import backup from '../../../backup/backup.js';
 
+const API_BASE_URL =
+  process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_HOST : '';
+
 const Grid = () => {
   const stateUrl = useSelector((state) => state.equip.url);
   const stateEqType = useSelector((state) => state.equip.currentEqType);
@@ -20,7 +23,7 @@ const Grid = () => {
 
     // console.log('clicked')
     // console.log('inside: ', stateUrl)
-    // fetch(`/resultsLoad`, {
+    // fetch(`${API_BASE_URL}/resultsLoad`, {
     //     method: 'POST',
     //     headers: {
     //     'Content-Type': 'application/json'

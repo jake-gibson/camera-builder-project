@@ -1,7 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+const API_BASE_URL =
+  process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_HOST : '';
 
 export const aiProductInfo = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: '/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: `${API_BASE_URL}/` }),
   reducerPath: 'aiProductInfo',
   endpoints: (builder) => ({
     compareProducts: builder.mutation({

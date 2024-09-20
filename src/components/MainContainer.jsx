@@ -7,6 +7,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { TRUE } from 'sass';
 import AiContainer from './AiContainer/AiContainer.jsx';
 
+const API_BASE_URL =
+  process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_HOST : '';
+
 const MainContainer = () => {
   //should actually have open as a redux state..
 
@@ -30,7 +33,7 @@ const MainContainer = () => {
     }
     //fetching all builds
     console.log('clicked, getting all builds');
-    fetch(`/getAllBuilds`, {
+    fetch(`${API_BASE_URL}/getAllBuilds`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -68,7 +71,7 @@ const MainContainer = () => {
 
   const deleteBuild = (data) => {
     console.log('clicked, deleting build in db');
-    fetch(`/deleteBuild`, {
+    fetch(`${API_BASE_URL}/deleteBuild`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
