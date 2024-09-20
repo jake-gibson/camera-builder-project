@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 
@@ -61,6 +62,11 @@ module.exports = {
       title: 'Webpack Dev',
       filename: 'index.html',
       template: 'src/template.html',
+    }),
+    new webpack.DefinePlugin({
+      'process.env.REACT_APP_PROD_HOST': JSON.stringify(
+        process.env.REACT_APP_PROD_HOST
+      ),
     }),
     // new NodePolyfillPlugin()
   ],
