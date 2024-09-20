@@ -5,5 +5,4 @@
 <img src="https://github.com/jake-gibson/camera-builder-project/blob/main/src/assets/cameraMode.png">
 
 ### Disclaimer
-<<<<<<< Updated upstream
 cameraMode.io is in early stages of development. Please let me know of any questions or concerns. You are more than welcome to open issues or pull requests to contribute to the growth of the project. 
