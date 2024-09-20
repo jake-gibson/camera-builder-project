@@ -1,11 +1,22 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 const resultsController = require('./controllers/resultsController');
 const buildController = require('./controllers/buildController');
 const aiController = require('./controllers/aiController');
+
+const corsOptions = {
+  origin:
+    process.env.REACT_APP_PROD_HOST ||
+    'http://localhost:3000' ||
+    'http://localhost:7300', // Allow requests from the frontend in development and production
+  optionsSuccessStatus: 200, // Some legacy browsers (IE11, etc.) choke on 204
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.static(path.resolve(__dirname, '../build')));
 app.use(express.json()); //body-parser
