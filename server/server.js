@@ -9,10 +9,20 @@ const buildController = require('./controllers/buildController');
 const aiController = require('./controllers/aiController');
 
 const corsOptions = {
-  origin:
-    process.env.REACT_APP_PROD_HOST ||
-    'http://localhost:3000' ||
-    'http://localhost:7300', // Allow requests from the frontend in development and production
+  origin: function (origin, callback) {
+    const allowedOrigins = ['http://localhost:3000', 'http://localhost:7300'];
+
+    // Allow requests from localhost in development or if the origin ends with the Vercel domain
+    if (
+      !origin ||
+      allowedOrigins.includes(origin) ||
+      origin.endsWith('jake-gibsons-projects.vercel.app')
+    ) {
+      callback(null, true); // Allow the request
+    } else {
+      callback(new Error('Not allowed by CORS')); // Deny the request
+    }
+  }, // Allow requests from the frontend in development and production
   optionsSuccessStatus: 200, // Some legacy browsers (IE11, etc.) choke on 204
 };
 
