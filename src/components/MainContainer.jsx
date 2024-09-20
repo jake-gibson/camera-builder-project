@@ -5,7 +5,7 @@ import Container from './Container/Container.jsx';
 // import { openDropdown } from '../reducers/dynamicSlice.js'
 import { useDispatch, useSelector } from 'react-redux';
 import { TRUE } from 'sass';
-import AiContainer from './AIContainer/AIContainer.jsx';
+import AiContainer from './AiContainer/AiContainer.jsx';
 
 const MainContainer = () => {
   //should actually have open as a redux state....
@@ -106,10 +106,12 @@ const MainContainer = () => {
     <div id="main">
       <div id="nav-bar">
         <p id="headText">💎cameraMode.io</p>
-        {!empty && open && <div id="build-list">{buildList}</div>}
-        <button id="your-builds" onMouseEnter={getBuilds}>
-          Prev Builds
-        </button>
+        <div>
+          <button id="your-builds" onMouseEnter={getBuilds}>
+            Prev Builds
+          </button>
+          {!empty && open && <div id="build-list">{buildList}</div>}
+        </div>
       </div>
       <Header />
       <AiContainer />
