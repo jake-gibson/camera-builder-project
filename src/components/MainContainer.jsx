@@ -8,7 +8,7 @@ import { TRUE } from 'sass';
 import AiContainer from './AiContainer/AiContainer.jsx';
 
 const MainContainer = () => {
-  //should actually have open as a redux state....
+  //should actually have open as a redux state..
 
   // const openRedux = useSelector((state) => state.dynamic.open)
 
