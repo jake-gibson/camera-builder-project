@@ -48,14 +48,14 @@ module.exports = {
     open: true,
     hot: true,
     compress: true,
-    proxy: {
-      '/resultsLoad': 'http://localhost:3000',
-      '/assets': 'http://localhost:3000',
-      '/saveBuild': 'http://localhost:3000',
-      '/getAllBuilds': 'http://localhost:3000',
-      '/deleteBuild': 'http://localhost:3000',
-      '/aiProductInfo': 'http://localhost:3000',
-    },
+    // proxy: {
+    //   '/resultsLoad': 'http://localhost:3000',
+    //   '/assets': 'http://localhost:3000',
+    //   '/saveBuild': 'http://localhost:3000',
+    //   '/getAllBuilds': 'http://localhost:3000',
+    //   '/deleteBuild': 'http://localhost:3000',
+    //   '/aiProductInfo': 'http://localhost:3000',
+    // },
   },
   plugins: [
     new HtmlWebpackPlugin({

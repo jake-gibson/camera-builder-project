@@ -7,8 +7,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { TRUE } from 'sass';
 import AiContainer from './AiContainer/AiContainer.jsx';
 
-const API_BASE_URL = '';
-  // process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_HOST : '';
+const API_BASE_URL = 
+  process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_HOST : 'http://localhost:3000';
 
 const MainContainer = () => {
   //should actually have open as a redux state..
