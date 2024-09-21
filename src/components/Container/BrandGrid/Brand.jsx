@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { updateURL } from '../../../reducers/equipmentSlice';
 
+import debug from '../../../utils/debugLog';
+
 const Brand = ({ eqType, name }) => {
   const dispatch = useDispatch();
 
@@ -16,7 +18,7 @@ const Brand = ({ eqType, name }) => {
   };
 
   const newUrl = `https://www.bhphotovideo.com/c/search?q=${search[eqType]}%20${name}&sts=ma`;
-  console.log('Just made url: ', newUrl);
+  debug.log('Just made url: ', newUrl);
 
   return (
     <Link to={`/results`} className="brandBtn">

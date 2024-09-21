@@ -13,13 +13,15 @@ import { remove } from '../../reducers/equipmentSlice.js';
 import { useDispatch, useSelector } from 'react-redux';
 import Options from './Options.jsx';
 
+import debug from '../../utils/debugLog.js';
+
 const BuildDiv = ({ type }) => {
   const dispatch = useDispatch();
   // const stateEqType = useSelector((state) => state.equip.currentEqType );
   // const type = objectType[stateEqType]
   const buildObj = useSelector((state) => state.equip[type]);
   const loaded = useSelector((state) => state.equip[type].loaded);
-  // console.log(buildObj)
+  // debug.log(buildObj)
   const { title, price, link, imgURL } = buildObj;
 
   const convertStr = {
@@ -32,7 +34,7 @@ const BuildDiv = ({ type }) => {
   };
 
   const imgSrc = convertStr[imgURL] ? convertStr[imgURL] : imgURL;
-  // console.log(imgSrc)
+  // debug.log(imgSrc)
 
   return (
     <div className="buildDiv">

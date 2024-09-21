@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import debug from '../utils/debugLog';
 
 export const equipmentSlice = createSlice({
   name: 'equip',
@@ -60,8 +61,8 @@ export const equipmentSlice = createSlice({
       }
     },
     loadOldBuild: (state, action) => {
-      // console.log(action.payload.target)
-      // console.log(action.payload.data)
+      // debug.log(action.payload.target)
+      // debug.log(action.payload.data)
 
       const {
         totalCost,
@@ -130,7 +131,7 @@ export const equipmentSlice = createSlice({
     aiQuery: (state, action) => {
       const eqType = action.payload.type;
       const currIndex = state.aiComparison.index;
-      console.log(currIndex);
+      debug.log(currIndex);
 
       //Populate first or second slot for product to compare
       state.aiComparison[currIndex] = state[eqType];

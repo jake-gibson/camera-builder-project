@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { TRUE } from 'sass';
 import AiContainer from './AiContainer/AiContainer.jsx';
 
+import debug from '../utils/debugLog.js';
+
 const API_BASE_URL = 
   process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_HOST : 'http://localhost:3000';
 
@@ -18,13 +20,6 @@ const MainContainer = () => {
   const [open, setOpen] = useState(false);
   const [buildList, setBuildList] = useState([]);
   const [empty, setEmpty] = useState(true);
-  // const [deleted, setDeleted] = useState(false)
-
-  // useEffect(() => {
-  //     console.log('hello')
-  //     setOpen(true);
-  //     console.log(open)
-  // }, [buildList])
 
   const getBuilds = () => {
     if (open) {
@@ -32,7 +27,7 @@ const MainContainer = () => {
       return;
     }
     //fetching all builds
-    console.log('clicked, getting all builds');
+    debug.log('clicked, getting all builds');
     fetch(`${API_BASE_URL}/getAllBuilds`, {
       method: 'GET',
       headers: {
@@ -42,8 +37,8 @@ const MainContainer = () => {
       .then((res) => res.json())
       .then((allBuilds) => {
         //an array of product objects
-        console.log('Back from Server, here are all builds:');
-        console.log(allBuilds);
+        debug.log('Back from Server, here are all builds:');
+        debug.log(allBuilds);
 
         const oldBuilds = [];
 
@@ -70,7 +65,7 @@ const MainContainer = () => {
   // const [buildList, setBuildList] = useState([])
 
   const deleteBuild = (data) => {
-    console.log('clicked, deleting build in db');
+    debug.log('clicked, deleting build in db');
     fetch(`${API_BASE_URL}/deleteBuild`, {
       method: 'POST',
       headers: {
@@ -81,8 +76,8 @@ const MainContainer = () => {
       .then((res) => res.json())
       .then((deletedBuild) => {
         //an array of product objects
-        console.log('Back from Server, here is the deleted build:');
-        console.log(deletedBuild);
+        debug.log('Back from Server, here is the deleted build:');
+        debug.log(deletedBuild);
 
         //figure out how to identify the build in the array
         const oldBuilds = buildList;

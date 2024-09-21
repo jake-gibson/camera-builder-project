@@ -3,6 +3,7 @@ import Result from './Result.jsx';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import debug from '../../../utils/debugLog.js';
 
 import backup from '../../../backup/backup.js';
 
@@ -14,7 +15,7 @@ const API_BASE_URL =
 const Grid = () => {
   const stateUrl = useSelector((state) => state.equip.url);
   const stateEqType = useSelector((state) => state.equip.currentEqType);
-  console.log('up here', stateUrl);
+  debug.log('up here', stateUrl);
 
   const [data, setData] = useState(Array(20).fill(''));
   const [url, setURL] = useState('');
@@ -23,8 +24,8 @@ const Grid = () => {
   useEffect(() => {
     setData(backup[stateEqType]);
 
-    // console.log('clicked')
-    // console.log('inside: ', stateUrl)
+    // debug.log('clicked')
+    // debug.log('inside: ', stateUrl)
     // fetch(`${API_BASE_URL}/resultsLoad`, {
     //     method: 'POST',
     //     headers: {
@@ -34,7 +35,7 @@ const Grid = () => {
     // })
     // .then(res => res.json())
     // .then((res)  => { //an array of product objects
-    //     console.log(res)
+    //     debug.log(res)
     //     setData(res);
     // })
   }, []);

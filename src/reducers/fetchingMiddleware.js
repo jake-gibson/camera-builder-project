@@ -1,4 +1,6 @@
 import { toggleComparedForMiddleware } from './equipmentSlice';
+import debug from '../utils/debugLog';
+
 const API_BASE_URL = '';
 // process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_HOST : '';
 
@@ -6,7 +8,7 @@ const fetchingMiddleware = () => {
   return ({ dispatch, getState }) =>
     (next) =>
     (action) => {
-      console.log(
+      debug.log(
         'Dispatch Middleware has received a message. Here are the contents: ',
         action
       );

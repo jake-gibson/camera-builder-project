@@ -3,6 +3,8 @@ import Build from './Build.jsx';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { Link, HistoryRouterProps } from 'react-router-dom';
+import debug from '../../utils/debugLog.js';
+
 const API_BASE_URL =
   process.env.NODE_ENV === 'production'
     ? process.env.REACT_APP_PROD_HOST
@@ -26,7 +28,7 @@ const Header = () => {
   const deciCost = () => {
     if (cost === 0) return 0;
     let temp = '' + cost;
-    console.log(temp);
+    debug.log(temp);
     temp = temp.slice(0, -3) + ',' + temp.slice(-3);
     if (temp.length < 5) temp = temp.slice(1);
     return temp;
@@ -35,7 +37,7 @@ const Header = () => {
   //TODO: trying to get comma into cost again
 
   const goBack = () => {
-    // console.log(location, 'YUP:', location.pathname)
+    // debug.log(location, 'YUP:', location.pathname)
     history.go(-1);
     // if(location.pathname === '/') setHome(true);
   };
@@ -51,8 +53,8 @@ const Header = () => {
 
     setBlank(false);
 
-    console.log('clicked');
-    console.log('inside: ', currBuild);
+    debug.log('clicked');
+    debug.log('inside: ', currBuild);
     fetch(`${API_BASE_URL}/saveBuild`, {
       method: 'POST',
       headers: {
@@ -63,8 +65,8 @@ const Header = () => {
       .then((res) => res.json())
       .then((res) => {
         //an array of product objects
-        console.log('Back from Server, heres the new build:');
-        console.log(res);
+        debug.log('Back from Server, heres the new build:');
+        debug.log(res);
         // setData(res);
       });
   };

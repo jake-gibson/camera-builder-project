@@ -3,6 +3,8 @@ import React from 'react';
 import { loadOldBuild } from '../reducers/equipmentSlice';
 import { useDispatch } from 'react-redux';
 
+import debug from '../utils/debugLog';
+
 const OldBuild = ({ date, data, deleteBuild }) => {
   const dispatch = useDispatch();
 
@@ -12,7 +14,7 @@ const OldBuild = ({ date, data, deleteBuild }) => {
   const deciCost = () => {
     if (totalCost === 0) return 0;
     let temp = '' + totalCost;
-    console.log(temp);
+    debug.log(temp);
     temp = temp.slice(0, -3) + ',' + temp.slice(-3);
     return temp;
   };
